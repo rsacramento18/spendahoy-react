@@ -1,0 +1,21 @@
+{
+  "router": {
+    "dashboard": "Home",
+    "budget": "Limites",
+    "categories": "Categorias",
+    "import": "Importar"
+  },
+  "transactions" : {
+    "title": "Despesas",
+    "headers" : {
+      "id": "Id",
+      "date": "Data",
+      "description": "Descrição",
+      "value": "Valor",
+      "type": "Tipo",
+      "organization": "Banco",
+      "category": "Categoria",
+      "actions": "Acções"
+    }
+  }
+}

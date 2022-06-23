@@ -1,0 +1,6 @@
+{
+  "router": {
+    "dashboard": "Dashboard"
+  },
+  "message": "hello i18n !!"
+}
