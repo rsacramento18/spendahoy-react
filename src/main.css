@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap');
+
+:root {
+
+  --color-background: #D9D9D9;
+  --color-foreground: #353535;
+
+  --color-white: #FFFFFF;
+
+  --color-green: #3C6E71;
+
+  --color-blue: #284B63;
+}
+
+
+body {
+  font-family: Sora, arial;
+  font-weight: 400;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  margin: 0 5%;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 5vh;
+  padding: 20px 0;
+}
+
+nav {
+  margin: 20px auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: var(--color-foreground);
+  font-weight: 300;
+}
+
+nav a:hover,
+nav a.router-link-active {
+  margin: 0 19.7px;
+  font-weight:400;
+}
+
+main {
+  height: 91vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: 50px 50px;
+  border-radius: 4px;
+  box-shadow: var(--el-box-shadow-lighter);
+}
