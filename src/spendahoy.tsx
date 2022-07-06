@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './main.css';
 
 import Dashboard from './routes/dashboard';
 import Budget from './routes/budget';
