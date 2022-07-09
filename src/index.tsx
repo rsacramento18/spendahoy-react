@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import reportWebVitals from './reportWebVitals'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
-import Spendahoy from './spendahoy';
+import Spendahoy from './spendahoy'
 
-import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter } from 'react-router-dom';
-import theme from './styles/theme';
+import { MantineProvider } from '@mantine/core'
+import { theme } from './styles/theme'
+import { BrowserRouter } from 'react-router-dom'
 import './i18n';
 
 const queryClient = new QueryClient();
@@ -19,12 +19,15 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ChakraProvider theme={theme} resetCSS={false}>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <MantineProvider
+          withNormalizeCSS
+          theme={theme}
+        >
           <Spendahoy />
-          <ReactQueryDevtools />
-        </QueryClientProvider>
-      </ChakraProvider>
+        </MantineProvider>
+        <ReactQueryDevtools />
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

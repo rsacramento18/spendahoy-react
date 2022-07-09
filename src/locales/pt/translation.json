@@ -1,4 +1,5 @@
 {
+  "appTitle": "Spendahoy",
   "router": {
     "dashboard": "Home",
     "budget": "Limites",
