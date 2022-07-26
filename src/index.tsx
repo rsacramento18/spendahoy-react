@@ -6,8 +6,6 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 
 import Spendahoy from './spendahoy'
 
-import { MantineProvider } from '@mantine/core'
-import { theme } from './styles/theme'
 import { BrowserRouter } from 'react-router-dom'
 import './i18n';
 
@@ -20,12 +18,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <MantineProvider
-          withNormalizeCSS
-          theme={theme}
-        >
-          <Spendahoy />
-        </MantineProvider>
+        <Spendahoy />
         <ReactQueryDevtools />
       </QueryClientProvider>
     </BrowserRouter>

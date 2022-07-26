@@ -5,7 +5,7 @@ const Dashboard = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="dashboard">
       <h1>{t('router.dashboard')}</h1>
       <Transactions />
     </div>

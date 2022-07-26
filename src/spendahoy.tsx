@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import './styles/main.css';
 
 import Header from './components/header';
 
@@ -16,7 +16,7 @@ const Spendahoy = () => {
       <main>
         <Routes>
           <Route path="" element={<Dashboard />} />
-          <Route path="budget" element={<Budget/>} />
+          <Route path="budget" element={<Budget />} />
           <Route path="categories" element={<Categories />} />
           <Route path="import" element={<Import />} />
         </Routes>

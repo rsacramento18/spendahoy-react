@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import NavigationLink from './navigationLink';
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
 
@@ -11,10 +11,10 @@ const Header = () => {
         <h1>{t('appTitle')}</h1>
       </div>
       <nav>
-        <NavigationLink to="/" routerLink="router.dashboard" />
-        <NavigationLink to="/budget" routerLink="router.budget" />
-        <NavigationLink to="/categories" routerLink="router.categories" />
-        <NavigationLink to="/import" routerLink="router.import" />
+        <NavLink to="/">{t('router.dashboard')}</NavLink>
+        <NavLink to="/budget">{t('router.budget')}</NavLink>
+        <NavLink to="/categories">{t('router.categories')}</NavLink>
+        <NavLink to="/import">{t('router.import')}</NavLink>
       </nav>
     </header>
   )
