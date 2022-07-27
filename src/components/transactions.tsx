@@ -1,11 +1,13 @@
+import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
-import { fetchTransactions } from '../requests/transaction.request';
-import TransactionType from '../interfaces/transaction.interface';
+import { fetchTransactionsCurrentMonth } from '../requests/transaction.request';
+import TransactionType from '../models/transaction.model';
 import Transaction from './transaction';
 
 const Transactions = () => {
 
-  const { isLoading, isError, data, error } = useQuery<any[], Error>('transactions', fetchTransactions);
+  const { t } = useTranslation();
+  const { isLoading, isError, data, error } = useQuery<any[], Error>('transactions', fetchTransactionsCurrentMonth);
 
   if ( isLoading ) {
       return <span>loading</span>
@@ -19,13 +21,16 @@ const Transactions = () => {
 
   return (
     <div className="transactions card">
-      <table>
-        <tbody>
-          {transactions.map((transaction: TransactionType) => (
-            <Transaction key={transaction.id} {...transaction}/>
-          ))}
-        </tbody>
-      </table>
+      <h3 className="subtitle">{t('transactions.title')}</h3>
+      <div className="transactions-table">
+        <table>
+          <tbody>
+            {transactions.map((transaction: TransactionType) => (
+              <Transaction key={transaction.id} {...transaction}/>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

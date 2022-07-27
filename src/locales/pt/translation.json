@@ -11,12 +11,12 @@
     "headers" : {
       "id": "Id",
       "date": "Data",
-      "description": "Descrição",
+      "description": "DescriÁ„o",
       "value": "Valor",
       "type": "Tipo",
       "organization": "Banco",
       "category": "Categoria",
-      "actions": "Acções"
+      "actions": "AcÁıes"
     }
   }
 }

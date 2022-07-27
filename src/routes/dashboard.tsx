@@ -6,7 +6,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <h1>{t('router.dashboard')}</h1>
       <Transactions />
     </div>
   )

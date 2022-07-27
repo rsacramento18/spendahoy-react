@@ -1,4 +1,5 @@
-import TransactionType from '../interfaces/transaction.interface';
+import moment from 'moment';
+import TransactionType from '../models/transaction.model';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MillenniumLogo from '../assets/millennium-logo.png';
@@ -18,21 +19,23 @@ const Transaction = ( props: TransactionType) => {
     }
   }
 
+  const getCurrency = (num: number) => {
+    return  Number(num).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' €';
+  }
+
   return (
     <tr className="transaction" key={props.id}>
       <td className="logo">
         {getLogo(props.organizationName)}
       </td>
-      <td>
-        {props.description.length > 30 ?
-          `${props.description.substring(0, 30)}...` : props.description
-        }
+      <td className="description-date">
+        <div className="description">{props.description.length > 30 ?
+          `${props.description.substring(0, 35)}...` : props.description
+        }</div>
+        <div className="date">{moment(props.date).format('l')}</div>
       </td>
       <td className={`value ${props.value > 0 ? "sum" : "debt"}`}>
-        { props.value}
-      </td>
-      <td className="category">
-        { props.categoryName}
+        { getCurrency(props.value)}
       </td>
     </tr>
   )

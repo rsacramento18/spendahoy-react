@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap');
 
 :root {
-  --color-background: #FAF9F9;
+  --color-background: #f4f6fd;
   --color-foreground: #1D1E2C;
   --color-white: #FAF9F9;
   --color-dark: #555B6E;
@@ -52,26 +52,56 @@ main {
   height: 100%;
 }
 
+.subtitle {
+  margin-top: 0;
+}
+
 .dashboard {
   display: flex;
   flex-flow: column;
 }
 
+.card {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: var(--color-white);
+}
+
 /* =========================== TRANSACTIONS ============================ */
 .transactions {
   flex: 1 1 auto;
-  border: 2px solid grey;
-  padding: 10px;
-  border-radius: 5px;
-  overflow-y: scroll;
-  max-height: 75vh;
+  height: 40vh;
+  max-width: 45%;
 }
 
-.transaction .logo img,
-.transaction .logo svg {
+.transactions .transactions-table {
+  overflow: auto;
+  height: 85%;
+}
 
-  height: 25px;
-  width: 25px;
+.transactions .transactions-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.transaction {
+  height: 40px;
+  width: 100%;
+}
+
+.transaction td {
+  padding: 10px 0;
+}
+
+.transaction .description-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction .description-date .date {
+  font-size: 0.8em;
+  color: grey;
 }
 
 .transaction .value {
@@ -86,7 +116,9 @@ main {
   color: red;
 }
 
-.transaction .category {
-  text-align: right;
+.transaction .logo img,
+.transaction .logo svg {
+  margin: 0 10px;
+  height: 35px;
+  width: 35px;
 }
-
