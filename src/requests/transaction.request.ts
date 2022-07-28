@@ -24,4 +24,21 @@ const fetchTransactionsCurrentMonth = async () => {
   return res.data;
 }
 
-export { fetchTransactions, fetchTransactionsCurrentMonth };
+const fetchBudgetsCurrentMonth = async () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+
+  const res = await axios.get(`${BASE_URL}/transactionsgrouped?year=${year}&month=${month}`, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+  return res.data;
+}
+
+export {
+  fetchTransactions,
+  fetchTransactionsCurrentMonth,
+  fetchBudgetsCurrentMonth
+};

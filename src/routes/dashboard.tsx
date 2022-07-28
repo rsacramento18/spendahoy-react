@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import CategoriesSum from '../components/categoriesSum';
 import Transactions from '../components/transactions';
 
 const Dashboard = () => {
@@ -6,7 +7,14 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <Transactions />
+      <div className="row">
+        <Transactions />
+        <CategoriesSum />
+      </div>
+      <div className="row">
+        <Transactions />
+        <CategoriesSum />
+      </div>
     </div>
   )
 }

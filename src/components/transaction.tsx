@@ -1,5 +1,6 @@
 import moment from 'moment';
 import TransactionType from '../models/transaction.model';
+import { getCurrency } from '../helpers/number.helper';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MillenniumLogo from '../assets/millennium-logo.png';
@@ -17,10 +18,6 @@ const Transaction = ( props: TransactionType) => {
         return (<FontAwesomeIcon icon={faBuildingColumns} />);
 
     }
-  }
-
-  const getCurrency = (num: number) => {
-    return  Number(num).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') + ' €';
   }
 
   return (

@@ -7,16 +7,13 @@
     "import": "Importar"
   },
   "transactions" : {
-    "title": "Despesas",
-    "headers" : {
-      "id": "Id",
-      "date": "Data",
-      "description": "Descrição",
-      "value": "Valor",
-      "type": "Tipo",
-      "organization": "Banco",
-      "category": "Categoria",
-      "actions": "Acções"
-    }
+    "title": "Despesas"
+  },
+  "categories" : {
+    "title": "Categorias"
+  },
+  "progressBar": {
+    "current": "Actual",
+    "limit": "Limite"
   }
 }
