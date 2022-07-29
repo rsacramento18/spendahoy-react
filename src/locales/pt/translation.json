@@ -15,5 +15,23 @@
   "progressBar": {
     "current": "Actual",
     "limit": "Limite"
+  },
+  "categoryCreate": {
+    "title": "Criar nova categoria",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Introduzir nome"
+      },
+      "submit": "Criar categoria"
+    }
+  },
+  "listCategories" : {
+    "title": "Categorias",
+    "actions": {
+      "transactions": "Ver extrato",
+      "edit": "Editar",
+      "delete": "Apagar"
+    }
   }
 }

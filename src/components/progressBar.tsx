@@ -30,7 +30,7 @@ const ProgressBar = (props: ProgressBarType) => {
     }
     return {
       width:`${value}%`,
-      backgroundColor: `var(--color-primary)`
+      backgroundColor: `var(--color-secondary)`
     }
   }
 
@@ -52,7 +52,7 @@ const ProgressBar = (props: ProgressBarType) => {
     }
     return {
       border: `1px solid var(--color-dark)`,
-      backgroundColor: `var(--color-primary)`
+      backgroundColor: `var(--color-secondary)`
     }
   }
 

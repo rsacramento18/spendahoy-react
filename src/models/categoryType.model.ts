@@ -1,4 +1,4 @@
-export default interface CategorySum {
+export default interface CategoryType {
   id: number;
   name: string;
   sum: number;

@@ -3,15 +3,9 @@ import CategoriesSum from '../components/categoriesSum';
 import Transactions from '../components/transactions';
 
 const Dashboard = () => {
-  const { t } = useTranslation();
-
   return (
-    <div className="dashboard">
-      <div className="row">
-        <Transactions />
-        <CategoriesSum />
-      </div>
-      <div className="row">
+    <div className="wrapper">
+      <div className="row height-100">
         <Transactions />
         <CategoriesSum />
       </div>

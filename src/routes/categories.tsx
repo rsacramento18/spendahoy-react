@@ -1,9 +1,13 @@
-import { useTranslation } from 'react-i18next';
+import CreateCategory from '../components/categoryCreate';
+import ListCategories from '../components/listCategories';
 
 const Categories = () => {
-  const { t } = useTranslation();
-
-  return <h1>{t('router.categories')}</h1>
+  return (
+    <div className="wrapper width-50">
+      <CreateCategory />
+      <ListCategories />
+    </div>
+  )
 }
 
 export default Categories;

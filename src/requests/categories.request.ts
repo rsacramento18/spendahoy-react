@@ -10,3 +10,7 @@ const fetchCategories = async () => {
   });
   return res.data;
 }
+
+export {
+  fetchCategories
+};

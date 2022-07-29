@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { fetchBudgetsCurrentMonth } from '../requests/transaction.request';
-import CategorySumType from '../models/categorySum.model';
+import CategoryType from '../models/categoryType.model';
 import CategorySum from './categorySum';
 
 const CategoriesSum = () => {
@@ -17,7 +17,7 @@ const CategoriesSum = () => {
     return <span>Error { error.message }</span>
   }
 
-  const categoriesSum: CategorySumType[] = data ?? [];
+  const categoriesSum: CategoryType[] = data ?? [];
 
   return (
     <div className="categories-sum card">
@@ -25,7 +25,7 @@ const CategoriesSum = () => {
       <div className="categories-sum-table">
         <table>
           <tbody>
-            {categoriesSum.map((categorySum: CategorySumType) => {
+            {categoriesSum.map((categorySum: CategoryType) => {
               if (categorySum.name !== 'Não Identificado') {
                 return (<CategorySum key={categorySum.id} {...categorySum}/>);
               }
