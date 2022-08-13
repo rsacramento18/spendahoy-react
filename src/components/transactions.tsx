@@ -19,6 +19,10 @@ const Transactions = () => {
 
   const transactions: TransactionType[] = data ?? [];
 
+  if ( transactions.length === 0 ) {
+    return <span>No transactions found</span>
+  }
+
   return (
     <div className="transactions card">
       <h3 className="subtitle">{t('transactions.title')}</h3>
