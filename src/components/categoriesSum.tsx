@@ -7,7 +7,7 @@ import CategorySum from './categorySum';
 const CategoriesSum = () => {
   const { t } = useTranslation();
 
-  const { isLoading, isError, data, error } = useQuery<any[], Error>('categories', fetchBudgetsCurrentMonth);
+  const { isLoading, isError, data, error } = useQuery<any[], Error>('categoriesSum', fetchBudgetsCurrentMonth);
 
   if ( isLoading ) {
       return <span>loading</span>
@@ -19,7 +19,7 @@ const CategoriesSum = () => {
 
   const categoriesSum: CategoryType[] = data ?? [];
 
-  if ( categoriesSum.length > 1 ) {
+  if ( categoriesSum.length > 1) {
     return (
       <div className="categories-sum card">
         <h3 className="subtitle">{t('categories.title')}</h3>

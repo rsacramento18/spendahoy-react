@@ -20,20 +20,24 @@ const ListCategories = () => {
 
   const categories: CategoryType[] = data ?? [];
 
-  return (
-    <div className="list-categories card">
-      <h3>{t('listCategories.title')}</h3>
-      <div className="categories">
-        <table>
-          <tbody>
-            {categories.map((category: CategoryType) => (
-              <Category key={category.id} {...category}/>
-            ))}
-          </tbody>
-        </table>
+  if ( categories.length > 1) {
+    return (
+      <div className="list-categories card">
+        <h3>{t('listCategories.title')}</h3>
+        <div className="categories">
+          <table>
+            <tbody>
+              {categories.map((category: CategoryType) => (
+                <Category key={category.id} {...category}/>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-  )
+    )
+  } else {
+    return <span>No categories found</span>
+  }
 }
 
 export default ListCategories;
