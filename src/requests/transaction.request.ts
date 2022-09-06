@@ -37,8 +37,23 @@ const fetchBudgetsCurrentMonth = async () => {
   return res.data;
 }
 
+const updateCategory = async (transactionId: number, categoryId: number) => {
+  await axios.post(`${BASE_URL}/transactions/savecategory`,
+    {
+      id: transactionId,
+      categoryId: categoryId
+    },
+    {
+      headers: {
+      'Accept': 'application/json'
+      }
+    }
+  );
+}
+
 export {
   fetchTransactions,
   fetchTransactionsCurrentMonth,
-  fetchBudgetsCurrentMonth
+  fetchBudgetsCurrentMonth,
+  updateCategory
 };

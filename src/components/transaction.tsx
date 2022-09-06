@@ -1,10 +1,12 @@
+import { useState } from 'react';
 import moment from 'moment';
 import TransactionType from '../models/transaction.model';
 import CategoryType from '../models/categoryType.model';
 import { useTranslation } from 'react-i18next';
 import { getCurrency } from '../helpers/number.helper';
-import { useQuery } from 'react-query';
+import { useQuery, useQueryClient } from 'react-query';
 import { fetchCategories } from '../requests/categories.request';
+import { updateCategory } from '../requests/transaction.request';
 
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,17 +15,28 @@ import MontepioLogo from '../assets/montepio-logo.jpeg';
 
 const Transaction = ( props: TransactionType) => {
   const { t } = useTranslation();
+  const queryClient = useQueryClient();
+
+  const [categoryId, setCategoryId] = useState(props.categoryId ? props.categoryId : '');
 
   const { isLoading, isError, data, error } = useQuery<any[], Error>('categories', fetchCategories);
+
+  const change = async (event: any) => {
+    const categoryId = event.target.value;
+    updateCategory(props.id, categoryId);
+    await queryClient.refetchQueries(['categoriesSum'], { active: true});
+    setCategoryId(categoryId);
+  }
+
 
   const categories: CategoryType[] = data ?? [];
 
   const getLogo = (organization: string) => {
     switch(organization) {
       case 'Montepio':
-        return (<img src={MontepioLogo} />);
+        return (<img src={MontepioLogo} alt="MontepioLogo" />);
       case 'Millennium':
-        return (<img src={MillenniumLogo} />);
+        return (<img src={MillenniumLogo} alt="MillenniumLogo" />);
       default:
         return (<FontAwesomeIcon icon={faBuildingColumns} />);
 
@@ -41,10 +54,10 @@ const Transaction = ( props: TransactionType) => {
       </td>
       <td className="transaction-category">
         <select
+          onChange={change}
           name="categoryTransaction"
-          defaultValue=""
-          value={props.categoryId ? props.categoryId : ''}>
-          <option className="no-category" value="" disabled>{t('transactions.transaction.noCategory')}</option>
+          value={categoryId}>
+          <option value="">{t('transactions.transaction.noCategory')}</option>
           {categories
             .map((category: CategoryType) => (
               <option key={category.id} value={category.id}>{category.name}</option>

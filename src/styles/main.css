@@ -217,18 +217,11 @@ main {
   padding: 5px;
   border-color: lightgrey;
   border-radius: 5px;
+  background-color: var(--color-white);
 }
 
 .transaction-category select:focus-visible {
   outline-color: grey;
-}
-
-.transaction-category select:disabled {
-  color: lightgrey;
-}
-
-.transaction-category select .no-category {
-  color: lightgrey;
 }
 
 .transaction .value {
