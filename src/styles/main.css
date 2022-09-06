@@ -213,6 +213,24 @@ main {
   color: grey;
 }
 
+.transaction-category select {
+  padding: 5px;
+  border-color: lightgrey;
+  border-radius: 5px;
+}
+
+.transaction-category select:focus-visible {
+  outline-color: grey;
+}
+
+.transaction-category select:disabled {
+  color: lightgrey;
+}
+
+.transaction-category select .no-category {
+  color: lightgrey;
+}
+
 .transaction .value {
   text-align: right;
 }

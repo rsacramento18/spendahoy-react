@@ -14,7 +14,6 @@ const ProgressBar = (props: ProgressBarType) => {
 
   const lineStyles = () => {
     const value = getPercentageValue(props.value, props.limit);
-    console.log(value);
 
     if(value >= 100) {
       return {
@@ -36,7 +35,6 @@ const ProgressBar = (props: ProgressBarType) => {
 
   const innerPointStyles = () => {
     const value = getPercentageValue(props.value, props.limit);
-    console.log(value);
 
     if(value >= 100) {
       return {

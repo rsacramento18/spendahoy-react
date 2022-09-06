@@ -6,8 +6,11 @@
     "categories": "Categorias",
     "import": "Importar"
   },
-  "transactions" : {
-    "title": "Despesas"
+  "transactions": {
+    "title": "Despesas",
+    "transaction": {
+      "noCategory" : "sem categoria"
+    }
   },
   "categories" : {
     "title": "Categorias"
