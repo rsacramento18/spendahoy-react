@@ -1,5 +1,8 @@
 {
   "appTitle": "Spendahoy",
+  "date": {
+    "months": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+  },
   "router": {
     "dashboard": "Home",
     "budget": "Limites",

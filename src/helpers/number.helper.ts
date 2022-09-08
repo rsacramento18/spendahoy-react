@@ -10,5 +10,10 @@ const convertPercentage = (value: number, limit: number) => {
   return (Math.abs(value)*100)/limit;
 }
 
-export { getCurrency, convertPercentage};
+const getCurrentMonth = () => {
+  const today = new Date();
+  return today.getMonth() + 1;
+}
+
+export { getCurrency, convertPercentage, getCurrentMonth };
 
