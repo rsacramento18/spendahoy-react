@@ -23,8 +23,9 @@ const Transaction = ( props: TransactionType) => {
 
   const change = async (event: any) => {
     const categoryId = event.target.value;
-    updateCategory(props.id, categoryId);
-    await queryClient.refetchQueries(['categoriesSum'], { active: true});
+    await updateCategory(props.id, categoryId).then(() => {
+      queryClient.refetchQueries(['categoriesSum']);
+    });
     setCategoryId(categoryId);
   }
 
