@@ -11,10 +11,10 @@ const fetchTransactions = async () => {
   return res.data;
 }
 
-const fetchTransactionsCurrentMonth = async () => {
+const fetchTransactionsCurrentMonth = async (month: number) => {
   const today = new Date();
   const year = today.getFullYear();
-  const month = today.getMonth() + 1;
+  const month2 = today.getMonth() + 1;
 
   const res = await axios.get(`${BASE_URL}/transactions?year=${year}&month=${month}`, {
     headers: {
@@ -24,10 +24,10 @@ const fetchTransactionsCurrentMonth = async () => {
   return res.data;
 }
 
-const fetchBudgetsCurrentMonth = async () => {
+const fetchBudgetsCurrentMonth = async (month: number) => {
   const today = new Date();
   const year = today.getFullYear();
-  const month = today.getMonth() + 1;
+  // const month = today.getMonth() + 1;
 
   const res = await axios.get(`${BASE_URL}/transactionsgrouped?year=${year}&month=${month}`, {
     headers: {

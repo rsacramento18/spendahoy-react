@@ -1,13 +1,16 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { fetchTransactionsCurrentMonth } from '../requests/transaction.request';
+import { SpendahoyContext }  from '../context/spendahoyContextProvider';
 import TransactionType from '../models/transaction.model';
 import Transaction from './transaction';
 
 const Transactions = () => {
 
   const { t } = useTranslation();
-  const { isLoading, isError, data, error } = useQuery<any[], Error>('transactions', fetchTransactionsCurrentMonth);
+  const { month } = useContext(SpendahoyContext);
+  const { isLoading, isError, data, error } = useQuery<any[], Error>(['transactions', month], () => fetchTransactionsCurrentMonth(month));
 
   if ( isLoading ) {
       return <span>loading</span>
@@ -25,7 +28,13 @@ const Transactions = () => {
 
   return (
     <div className="transactions card">
-      <h3 className="subtitle">{t('transactions.title')}</h3>
+      <div className="subtitle-filters">
+        <div className="subtitle">
+          <h3 className="subtitle">{t('transactions.title')}</h3>
+        </div>
+        <div className="filters">
+        </div>
+      </div>
       <div className="transactions-table">
         <table>
           <tbody>

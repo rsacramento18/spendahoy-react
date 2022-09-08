@@ -151,8 +151,26 @@ header {
   padding: 20px 0;
 }
 
-header .logo {
+header .logo-date {
   display: flex;
+  align-items: center;
+}
+
+header .logo-date .date {
+  margin: 0 20px;
+}
+
+header .logo-date .date select {
+  background-color: var(--color-background);
+  border: dashed 1px gray;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+header .logo-date .date select .date-option {
+  background-color: var(--color-white);
+  border: none;
 }
 
 nav {
@@ -185,6 +203,11 @@ main {
 /* =========================== TRANSACTIONS ============================ */
 .transactions {
   width: 60%;
+}
+
+.transactions .subtitle-filters {
+  display: flex;
+  align-items: center;
 }
 
 .transactions .transactions-table {

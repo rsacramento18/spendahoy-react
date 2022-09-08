@@ -1,13 +1,16 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { fetchBudgetsCurrentMonth } from '../requests/transaction.request';
+import { SpendahoyContext }  from '../context/spendahoyContextProvider';
 import CategoryType from '../models/categoryType.model';
 import CategorySum from './categorySum';
 
 const CategoriesSum = () => {
   const { t } = useTranslation();
 
-  const { isLoading, isError, data, error } = useQuery<any[], Error>('categoriesSum', fetchBudgetsCurrentMonth);
+  const { month } = useContext(SpendahoyContext);
+  const { isLoading, isError, data, error } = useQuery<any[], Error>(['categoriesSum', month], () => fetchBudgetsCurrentMonth(month));
 
   if ( isLoading ) {
       return <span>loading</span>
