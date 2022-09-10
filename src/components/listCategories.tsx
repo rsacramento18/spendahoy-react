@@ -25,13 +25,9 @@ const ListCategories = () => {
       <div className="list-categories card">
         <h3>{t('listCategories.title')}</h3>
         <div className="categories">
-          <table>
-            <tbody>
-              {categories.map((category: CategoryType) => (
-                <Category key={category.id} {...category}/>
-              ))}
-            </tbody>
-          </table>
+          {categories.map((category: CategoryType) => (
+            <Category key={category.id} {...category}/>
+          ))}
         </div>
       </div>
     )

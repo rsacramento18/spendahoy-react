@@ -67,8 +67,16 @@ body {
   height: 100%;
 }
 
+.height-60 {
+  height: 60%;
+}
+
 .height-50 {
   height: 50%;
+}
+
+.height-40 {
+  height: 40%;
 }
 
 .card {
@@ -368,7 +376,7 @@ main {
 /* =========================== CATEGORY CREATE ============================ */
 
 .category-create {
-  height: 28%;
+  width: 40%;
 }
 .category-create .category-create-form {
   padding: 20px 0;
@@ -387,7 +395,7 @@ main {
 
 /* =========================== LIST CATEGORY ============================ */
 .list-categories {
-  height: 58%;
+  width: 60%;
 }
 
 .categories {
@@ -395,17 +403,31 @@ main {
   height: 88%;
 }
 
-.categories table {
+.categories {
+  width: 100%;
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.category button {
+  padding: 10px;
+  margin: 0 5px;
+  background-color: var(--color-white);
+  border: 1px solid lightgrey;
+  color: var(--color-foreground);
+  cursor: pointer;
+}
+
+.category button:hover {
+  border: 2px solid grey;
+  margin: -1px 4px;
+}
+
+/* =========================== CATEGORY DETAIL ============================ */
+
+.category-detail {
   width: 100%;
 }
 
-.category td {
-  padding: 10px 0;
-}
-
-.category .actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}

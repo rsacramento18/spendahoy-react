@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { SpendahoyContext }  from '../context/spendahoyContextProvider';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom'
@@ -8,7 +8,7 @@ const Header = () => {
 
   const { t } = useTranslation();
 
-  const { month, dispatch } = useContext(SpendahoyContext);
+  const { dispatch } = useContext(SpendahoyContext);
 
   const optionMonths = () => {
     let months = [];
