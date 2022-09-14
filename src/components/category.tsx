@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import CategoryType from '../models/categoryType.model';
 import { SpendahoyContext } from '../context/spendahoyContextProvider';
 
-const Category = (props: CategoryType) => {
+const Category = (props: any) => {
   const { t } = useTranslation();
 
   const { dispatch } = useContext(SpendahoyContext);

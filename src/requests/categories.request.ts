@@ -22,5 +22,6 @@ const fetchCategoryDetail = async (categoryId: number) => {
 }
 
 export {
-  fetchCategories
+  fetchCategories,
+  fetchCategoryDetail
 };
