@@ -11,6 +11,16 @@ const fetchCategories = async () => {
   return res.data;
 }
 
+const fetchCategoryDetail = async (categoryId: number) => {
+  const res = await axios.get(`${BASE_URL}/categorydetail?id=${categoryId}`, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  });
+
+  return res.data;
+}
+
 export {
   fetchCategories
 };

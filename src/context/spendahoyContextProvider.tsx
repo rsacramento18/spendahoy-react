@@ -2,13 +2,13 @@ import React, { useReducer, createContext, useContext } from "react";
 
 interface SpendahoyContextType {
   month: number,
-  categoryIdEdit: number | undefined,
+  categoryIdEdit: number ,
   dispatch: React.Dispatch<any>;
 }
 
 const initialState: SpendahoyContextType = {
   month: new Date().getMonth() + 1,
-  categoryIdEdit: undefined,
+  categoryIdEdit: 1,
   dispatch: () => {},
 };
 
