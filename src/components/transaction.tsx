@@ -21,6 +21,15 @@ const Transaction = ( props: TransactionType) => {
 
   const { isLoading, isError, data, error } = useQuery<any[], Error>('categories', fetchCategories);
 
+
+  if ( isLoading ) {
+      return <span>loading</span>
+  }
+
+  if ( isError ) {
+    return <span>Error { error.message }</span>
+  }
+
   const change = async (event: any) => {
     const categoryId = event.target.value;
     await updateCategory(props.id, categoryId).then(() => {
@@ -28,7 +37,6 @@ const Transaction = ( props: TransactionType) => {
     });
     setCategoryId(categoryId);
   }
-
 
   const categories: CategoryType[] = data ?? [];
 
