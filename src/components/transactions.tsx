@@ -30,7 +30,7 @@ const Transactions = () => {
     <div className="transactions card">
       <div className="subtitle-filters">
         <div className="subtitle">
-          <h3 className="subtitle">{t('transactions.title')}</h3>
+          <h3>{t('transactions.title')}</h3>
         </div>
         <div className="filters">
         </div>

@@ -5,19 +5,17 @@
   --color-foreground: #1D1E2C;
   --color-white: #FAF9F9;
 
-  /* --color-dark: #555B6E; */
   --color-dark: #212738;
 
   --color-primary: #227C9D;
   --color-primary-highlight: #1B6782;
 
-  /* --color-secondary: #7BD389; */
   --color-secondary: #26B03D;
   --color-secondary-highlight: #1F8E32;
 
   --color-highlight: #FFCB77;
 
-  --color-danger: #FB3640;
+  --color-danger: #E01F29;
   --color-danger-highlight: #C72B33;
 
   --color-green-500: #14591D;
@@ -124,22 +122,24 @@ button {
   margin: 5px 0;
   cursor: pointer;
   font-size: 0.8em;
-  border: 1px solid var(--color-primary-highlight);
+  border: 1px solid var(--color-primary);
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: var(--color-primary-highlight);
+  border: 1px solid var(--color-primary-highlight);
 }
 
 button.edit{
   background-color: var(--color-secondary);
-  border: 1px solid var(--color-secondary-highlight);
+  border: 1px solid var(--color-secondary);
 }
 
 button.edit:hover {
   background-color: var(--color-secondary-highlight);
+  border: 1px solid var(--color-secondary-highlight);
 }
 
 button.delete {

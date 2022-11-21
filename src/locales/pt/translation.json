@@ -12,7 +12,7 @@
   "transactions": {
     "title": "Despesas",
     "transaction": {
-      "noCategory" : "sem categoria"
+      "noCategory": "sem categoria"
     }
   },
   "categories" : {
@@ -32,7 +32,7 @@
       "submit": "Criar categoria"
     }
   },
-  "listCategories" : {
+  "listCategories": {
     "title": "Categorias",
     "actions": {
       "transactions": "Ver extrato",
@@ -40,8 +40,13 @@
       "delete": "Apagar"
     }
   },
-  "categoryDetail" : {
+  "categoryDetail": {
     "title": "Detalhe"
+  },
+  "importFile": {
+    "title": "Importar Despesas"
+  },
+  "fileUploader": {
+    "button": "Importar ficheiro"
   }
-
 }
