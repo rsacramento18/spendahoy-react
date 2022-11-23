@@ -10,6 +10,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "csv-file-validator": "^2.0.0",
     "i18next": "^21.8.10",
     "moment": "^2.29.4",
     "normalize.css": "^8.0.1",

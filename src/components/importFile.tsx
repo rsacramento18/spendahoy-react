@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import OrganizationType from '../models/organizationType.model';
@@ -6,11 +6,17 @@ import { fetchOrganizations } from '../requests/import.request';
 import FileUploader from './fileUploader';
 
 const ImportFile = () => {
+
+
   const { t } = useTranslation();
 
-  const [filePath, setFilePath] = useState<string>('');
+  const [filePath, setFilePath] = useState<HTMLInputElement>();
 
   const { isLoading, isError, data, error } = useQuery<any[], Error>('fetchOrganizations', fetchOrganizations);
+
+  useEffect(() => {
+    console.log('pathUpdated', filePath)
+  }, [filePath]);
 
   if (isLoading ) {
     return <span>loading</span>
@@ -22,10 +28,10 @@ const ImportFile = () => {
 
   const organizations: OrganizationType[] = data ?? [];
 
-  const handleFile = (fileUploaded: string) => {
-    // setFilePath(fileUploaded);
-    console.log('fileUploaded', fileUploaded );
+  const handleFile = (fileUploaded: HTMLInputElement) => {
+    setFilePath(fileUploaded);
   }
+
 
   return (
     <div className="card">
