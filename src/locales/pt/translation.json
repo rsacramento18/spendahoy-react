@@ -44,7 +44,8 @@
     "title": "Detalhe"
   },
   "importFile": {
-    "title": "Importar Despesas"
+    "title": "Importar Despesas",
+    "selectOption": "Escolher Banco"
   },
   "fileUploader": {
     "button": "Importar ficheiro"

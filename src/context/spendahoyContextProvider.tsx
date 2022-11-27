@@ -29,7 +29,7 @@ const spendahoyReducer = (state: any, action: any) => {
     case 'UPDATE_CATEGOY_ID_EDIT':
       return { ...state, categoryIdEdit: action.payload };
     case 'ADD_FILE_UPLOAD':
-      return {...state, expenseFile: [...action.payload] };
+      return {...state, expenseFile: [...state.expenseFile, action.payload] };
     default: 
       return state; 
   }
