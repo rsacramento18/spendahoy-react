@@ -432,3 +432,50 @@ main {
   width: 100%;
 }
 
+/* =========================== POPUP ============================ */
+
+.error-icon {
+  width: 100px;
+  height: 100px;
+  background: var(--color-green);
+  position: relative;
+}
+.error-icon:before {
+  content: "";
+  width: 100px;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 29px solid var(--color-green);
+  border-left: 29px solid #eee;
+  border-right: 29px solid #eee;
+}
+.error-icon:after {
+  content: "";
+  width: 100px;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 29px solid solid var(--color-green);
+  border-left: 29px solid #eee;
+  border-right: 29px solid #eee;
+}
+
+.success-icon {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
+  
+
+.confirm-icon {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid var(--color-highlight);
+}
+

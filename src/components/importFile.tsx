@@ -1,10 +1,12 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { SpendahoyContext } from '../context/spendahoyContextProvider';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import OrganizationType from '../models/organizationType.model';
 import { fetchOrganizations } from '../requests/import.request';
 import FileUploader from './fileUploader';
+import Popup from './popup';
+import PopupTypeEnum from '../models/popupTypeEnum.model';
 
 const ImportFile = () => {
 
@@ -23,8 +25,6 @@ const ImportFile = () => {
   if ( isError ) {
      return <span>Error { error.message }</span>
   }
-
-
 
   const handleSelectChange = (event: any) => {
     setOrganizationId(event.target.value)
@@ -55,6 +55,9 @@ const ImportFile = () => {
           </select>
           <FileUploader handleFile={handleFile} />
         </form>
+      </div>
+      <div>
+        <Popup type={PopupTypeEnum.Error} message="Message 1"/>
       </div>
     </div>
   )
