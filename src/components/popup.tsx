@@ -1,6 +1,6 @@
 import PopupTypeEnum from "../models/popupTypeEnum.model";
 
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faCross, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Popup = (type: PopupTypeEnum, message: string, response: boolean) => {
@@ -8,11 +8,29 @@ const Popup = (type: PopupTypeEnum, message: string, response: boolean) => {
   const icon = () => {
     switch (type) {
       case 1:
-        return (<FontAwesomeIcon icon={faCheck} />);
+        return (
+          <div className="error-icon">
+            <FontAwesomeIcon icon={faCross} />
+          </div>
+        );
       case 2:
-        return (<FontAwesomeIcon icon={faCheck} />);
+        return (
+          <div className="success-icon">
+            <FontAwesomeIcon icon={faCheck} />
+          </div>
+        );
+      case 3:
+        return (
+          <div className="confirm-icon">
+            <FontAwesomeIcon icon={faTriangleExclamation} />
+          </div>
+        );
       default:
-        return (<FontAwesomeIcon icon={faCheck} />);
+        return (
+          <div className="success-icon">
+            <FontAwesomeIcon icon={faCheck} />
+          </div>
+        );
     }
   }
 
